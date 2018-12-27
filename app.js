@@ -3,19 +3,18 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const { PORT, MONGODB_URI } = require('./config');
+
+/*===Import Routers===*/
+const primesRouter = require('./routes/primes');
+
+/*===Create Express Application===*/
+const app = express();
 
 /*===Log all requests. Skip logging during===*/
 app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'common', {
   skip: () => process.env.NODE_ENV === 'test'
 }));
-
-/*===Import Routers===*/
-
-
-/*===Create Express Application===*/
-const app = express();
 
 /*======CORS Middleware=====*/
 const corsOption = {
@@ -29,7 +28,7 @@ app.use(cors(corsOption));
 app.use(express.json());
 
 /*=======Routing=======*/
-app.get('/api/primes', (req, res) => res.send('Hello World!'));
+app.get('/api/primes', primesRouter);
 
 /*=======Custom 404 Not Found route handler=======*/
 app.use((req, res, next) => {
