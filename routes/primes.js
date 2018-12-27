@@ -70,7 +70,7 @@ router.post('/', (req, res, next) => {
 
   let result = '-1';
   let idxOf;
-  let index;
+  let index = 0;
   for (let i = 0; i < primeNumbers.length; i++) {
     idxOf = primeNumbers[i].indexOf(input);
     if (idxOf !== -1) {
@@ -89,9 +89,6 @@ router.post('/', (req, res, next) => {
       return res.status(201).location('/api/primes').json(result);
     })
     .catch(err => {
-      if (err.reason === 'ValidationError') {
-        return res.status(err.code).json(err);
-      }
       next(err);
     });
 });
@@ -99,13 +96,12 @@ router.post('/', (req, res, next) => {
 /*======GET /primes======*/
 router.get('/', (req, res, next) => {
 
-  Search.find({}, err => {
-    if (err) {
-      return next(err);
-    }
-  })
+  Search.find({})
     .then(results => {
       res.json(results);
+    })
+    .catch(err => {
+      next(err);
     });
 });
 

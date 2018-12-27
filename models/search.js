@@ -8,12 +8,12 @@ const searchSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 });
 
-// Transform output during `res.json(data)`, `console.log(data)` etc.
-searchSchema.set('toObject', {
+searchSchema.set('toJSON', {
   virtuals: true,
   transform: (doc, result) => {
-    delete result._id;
     delete result.__v;
+    result.id = result._id.toString();
+    delete result._id;
   }
 });
 
