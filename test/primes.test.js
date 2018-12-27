@@ -1,20 +1,17 @@
 'use strict';
 const Search = require('./../models/search');
-// const seedUsers = require('../db/seed/users');
-
 const app = require('../app');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const mongoose = require('mongoose');
 const sinon = require('sinon');
-
-
 const { TEST_MONGODB_URI } = require('../config');
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 const sandbox = sinon.createSandbox();
 
+// Test Data
 let input = '123';
 let result = '1123';
 let index = 187;
@@ -41,7 +38,6 @@ describe('PrimeThree API - /primes Endpoint', () => {
   after(() => {
     return mongoose.disconnect();
   });
-  /*=====Primes ENDPOINT=====*/
 
   /*=====Post: /primes=====*/
   describe('/api/primes', () => {
@@ -133,7 +129,7 @@ describe('PrimeThree API - /primes Endpoint', () => {
           });
       });
     });
-    // GET Endpoint
+    /*=====Get: /primes=====*/
     describe('GET', () => {
       it('should return an array of objects', () => {
         return chai
