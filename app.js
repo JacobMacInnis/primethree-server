@@ -28,7 +28,7 @@ app.use(cors(corsOption));
 app.use(express.json());
 
 /*=======Routing=======*/
-app.get('/api/primes', primesRouter);
+app.use('/api/primes', primesRouter);
 
 /*=======Custom 404 Not Found route handler=======*/
 app.use((req, res, next) => {

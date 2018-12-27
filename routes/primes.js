@@ -38,8 +38,8 @@ router.post('/', (req, res, next) => {
 
   const sizedFields = {
     input: {
-      min: 1,
-      max: 1
+      min: 3,
+      max: 3
     }
   };
   const tooSmallField = Object.keys(sizedFields).find(
@@ -68,27 +68,33 @@ router.post('/', (req, res, next) => {
 
   // Search for first prime number containing three digits...
 
-  let result = -1;
-  let found;
+  let result = '-1';
+  let idxOf;
+  let index;
   for (let i = 0; i < primeNumbers.length; i++) {
-    found = primeNumbers[i].indexOf(input);
-    if (found !== -1) {
-      result = i;
+    idxOf = primeNumbers[i].indexOf(input);
+    if (idxOf !== -1) {
+      result = primeNumbers[i];
+      index = i;
       break;
     }
   }
-  console.log(result);
-
-  // Search.create({  })
-  //   .then(result => {
-  //     return res.status(201).location('/api/users/${result.id}').json(result);
-  //   })
-  //   .catch(err => {
-  //     if (err.reason === 'ValidationError') {
-  //       return res.status(err.code).json(err);
-  //     }
-  //     next(err);
-  //   });
+  
+  let newData = {
+    input,
+    result,
+    index,
+  };
+  Search.create(newData)
+    .then(result => {
+      return res.status(201).location('/api/primes').json(result);
+    })
+    .catch(err => {
+      if (err.reason === 'ValidationError') {
+        return res.status(err.code).json(err);
+      }
+      next(err);
+    });
 });
 
 module.exports = router;

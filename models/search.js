@@ -2,8 +2,9 @@
 const mongoose = require('mongoose');
 
 const searchSchema = new mongoose.Schema({
-  input: { type: Number, required: true },
+  input: { type: String, required: true },
   result: { type: String, required: true },
+  index: { type: Number, required: true },
   date: { type: Date, default: Date.now },
 });
 
