@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test nyc mocha --file test/app.test.js",
+    "start": "node app.js"
   },
   "author": "Jacob MacInnis",
   "license": "ISC",
@@ -16,6 +17,9 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "chai-http": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }

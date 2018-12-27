@@ -28,6 +28,7 @@ app.use(cors(corsOption));
 app.use(express.json());
 
 /*=======Routing=======*/
+app.get('/api/test', (req, res) => res.send('Hello World!'));
 app.use('/api/primes', primesRouter);
 
 /*=======Custom 404 Not Found route handler=======*/

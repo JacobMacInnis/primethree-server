@@ -79,7 +79,6 @@ router.post('/', (req, res, next) => {
       break;
     }
   }
-  
   let newData = {
     input,
     result,
@@ -94,6 +93,19 @@ router.post('/', (req, res, next) => {
         return res.status(err.code).json(err);
       }
       next(err);
+    });
+});
+
+/*======GET /primes======*/
+router.get('/', (req, res, next) => {
+
+  Search.find({}, err => {
+    if (err) {
+      return next(err);
+    }
+  })
+    .then(results => {
+      res.json(results);
     });
 });
 
