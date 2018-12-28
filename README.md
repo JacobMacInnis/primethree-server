@@ -75,3 +75,16 @@ const searchSchema = new mongoose.Schema({
 });
 ```
 
+# Unit Testing
+
+PrimeThree Server has 89.29% test coverage with 100% the api/primes endpoint.
+
+### Unit Testing Tech
+- Mocha 
+- Chai 
+- Chai-HTTP 
+- Sinon
+- NYC
+### Test Coverage
+
+![Unit Test Coverage](assets/UnitTestResults.png "Unit Test Coverage") 
