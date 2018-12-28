@@ -1,5 +1,5 @@
 ![PrimeThree logo](assets/primethree-logo.png "PrimeThree Logo") 
-<div><img src='./assets/primethree-logo.png' alt='PrimeThree logo'><span>PrimeThree Server<span></div>
+# PrimeThree Server
 
 #### PrimeThree Server is an API server built to sync with [PrimeThree Client React App](https://github.com/JacobMacInnis/primethree-client) However it is a fully functioning server that you can use with your front end program of choice.
 
