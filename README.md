@@ -1,6 +1,6 @@
 # PrimeThree Server
 
-#### PrimeThree Server is an API server built to sync with PrimeThree Client (React App) However it is a fully functioning server that you can use with your front end program of choice.
+#### PrimeThree Server is an API server built to sync with [PrimeThree Client React App](https://github.com/JacobMacInnis/primethree-client) However it is a fully functioning server that you can use with your front end program of choice.
 
 # Instructions
 - Choose Clone in the github repo and copy the web URL (https://github.com/JacobMacInnis/primethree-server.git)
@@ -15,6 +15,7 @@ $ npm install
 ```
 $ node app.js
 ```
+- The server will run on localhost:8080 and CRUD requests should be sent to localhost:8080/api/primes
 
 
 # Routes
