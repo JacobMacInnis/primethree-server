@@ -2,12 +2,22 @@
 
 #### PrimeThree Server is an API server built to sync with PrimeThree Client (React App) However it is a fully functioning server that you can use with your front end program of choice.
 
+# Instructions
+- choose Clone in the github repo and copy the web URL (https://github.com/JacobMacInnis/primethree-server.git)
+- Open CLI and cd to desired location
+- Enter following git commands
+$ git clone https://github.com/JacobMacInnis/primethree-server.git
+$ cd primethree-server
+$ npm install
+- and to turn on the server locally
+$ node app.js
 
 
-## Routes
+
+# Routes
 
 ### POST Route `/api/primes`
-The POST endpoint requires an `input` property in the request body that contains a three digit string such as '123' or '003'.  The route validates the string and searches the first 10,000 prime numbers for a number that contains these digits in order. 
+The POST route requires an `input` property in the request body that contains a three digit string such as '123' or '003'.  The route validates the string and searches the first 10,000 prime numbers for a number that contains these digits in order. 
 
 #### ex...
 #### for the POST of '123' the response would be
@@ -25,6 +35,10 @@ The POST endpoint requires an `input` property in the request body that contains
 the response object shows the number sent, the first prime number that contains '123', the index shows this is the 187th prime number, the date submitted and the id of the new addition to the Mongo database.
 
 ### GET Route `/api/primes`
+
+The GET route responds with an array of objects of previous results from the POST route.
+
+#### ex...
 
 ```javascript
 [
