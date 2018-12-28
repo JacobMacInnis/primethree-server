@@ -1,4 +1,4 @@
-# PrimeThree Server
+# ![PrimeThree logo](assets/primethree-logo.png "PrimeThree Logo")   PrimeThree Server
 
 #### PrimeThree Server is an API server built to sync with [PrimeThree Client React App](https://github.com/JacobMacInnis/primethree-client) However it is a fully functioning server that you can use with your front end program of choice.
 
