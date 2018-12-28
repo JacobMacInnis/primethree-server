@@ -8,9 +8,7 @@
 - Enter following git commands
 ```
 $ git clone https://github.com/JacobMacInnis/primethree-server.git
-
 $ cd primethree-server
-
 $ npm install
 ```
 - and to turn on the server locally
