@@ -6,15 +6,17 @@
 - Choose Clone in the github repo and copy the web URL (https://github.com/JacobMacInnis/primethree-server.git)
 - Open CLI and cd to desired location
 - Enter following git commands
-
+```
 $ git clone https://github.com/JacobMacInnis/primethree-server.git
+
 $ cd primethree-server
+
 $ npm install
-
+```
 - and to turn on the server locally
-
+```
 $ node app.js
-
+```
 
 
 # Routes
